@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: worker
-          image: registry.ci-vm:5000/worker:latest
+          image: 192.168.64.12:5000/worker:latest
           resources:
             requests:
               cpu: "100m"

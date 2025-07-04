@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: producer
-          image: registry.ci-vm:5000/producer:latest
+          image: 192.168.64.12:5000/producer:latest
           ports:
             - containerPort: 5000
           env:

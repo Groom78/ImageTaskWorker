@@ -5,8 +5,8 @@ pipeline {
     stage('Build Producer') {
       steps {
         dir('producer') {
-          sh 'docker build -t registry.ci-vm:5000/producer:latest .'
-          sh 'docker push registry.ci-vm:5000/producer:latest'
+          sh 'docker build -t 192.168.64.12:5000/producer:latest .'
+          sh 'docker push 192.168.64.12:5000/producer:latest'
         }
       }
     }
@@ -14,8 +14,8 @@ pipeline {
     stage('Build Worker') {
       steps {
         dir('worker') {
-          sh 'docker build -t registry.ci-vm:5000/worker:latest .'
-          sh 'docker push registry.ci-vm:5000/worker:latest'
+          sh 'docker build -t 192.168.64.12:5000/worker:latest .'
+          sh 'docker push 192.168.64.12:5000/worker:latest'
         }
       }
     }
