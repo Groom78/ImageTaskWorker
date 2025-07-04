@@ -2,7 +2,14 @@ import redis
 import base64
 import time
 
-r = redis.Redis(host="redis", port=6379)
+while True:
+    try:
+        r = redis.Redis(host="redis", port=6379)
+        r.ping()
+        break
+    except redis.exceptions.ConnectionError:
+        print("Redis is not ready. Retrying in 2 seconds...")
+        time.sleep(2)
 
 while True:
     _, job = r.brpop("tasks")
