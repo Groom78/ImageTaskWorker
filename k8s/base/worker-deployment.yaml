@@ -8,15 +8,14 @@ spec:
     matchLabels:
       app: worker
   template:
-    spec:
-      initContainers:
-      - name: wait-for-redis
-        image: busybox
-        command: ['sh', '-c', 'until nslookup redis; do echo waiting for redis; sleep 2; done']
     metadata:
       labels:
         app: worker
     spec:
+      initContainers:
+        - name: wait-for-redis
+          image: busybox
+          command: ['sh', '-c', 'until nslookup redis; do echo waiting for redis; sleep 2; done']
       containers:
         - name: worker
           image: 192.168.64.12:5000/worker:latest
