@@ -11,3 +11,6 @@ def upload():
     encoded = base64.b64encode(image_data).decode("utf-8")
     r.lpush("tasks", encoded)
     return "Image added to queue", 200
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000)
