@@ -1,0 +1,17 @@
+resources:
+  - ../../base
+patches:
+  - target:
+      kind: Deployment
+      name: producer
+    patch: |-
+      - op: replace
+        path: /spec/replicas
+        value: 1
+  - target:
+      kind: Deployment
+      name: worker
+    patch: |-
+      - op: replace
+        path: /spec/replicas
+        value: 1

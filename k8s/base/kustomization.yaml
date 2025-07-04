@@ -1,0 +1,5 @@
+resources:
+  - producer-deployment.yaml
+  - worker-deployment.yaml
+  - redis-deployment.yaml
+  - service.yaml
