@@ -1,17 +1,16 @@
 resources:
   - ../../base
-patches:
+
+patchesJson6902:
   - target:
+      group: apps
+      version: v1
       kind: Deployment
       name: producer
-    patch: |-
-      - op: replace
-        path: /spec/replicas
-        value: 1
+    path: producer-patch.yaml
   - target:
+      group: apps
+      version: v1
       kind: Deployment
       name: worker
-    patch: |-
-      - op: replace
-        path: /spec/replicas
-        value: 1
+    path: worker-patch.yaml
