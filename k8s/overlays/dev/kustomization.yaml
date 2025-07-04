@@ -14,4 +14,3 @@ patchesJson6902:
       kind: Deployment
       name: worker
     path: worker-patch.yaml
-
